@@ -16,7 +16,9 @@ def getcontent(chat):
     }
     url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key="+key
     response = requests.post(url,json = data)
-    t1 = response.json()
-    print(t1)
-msg = "How is ms dhoni"
+    reply_api = response.json()
+    
+    reply = reply_api.get("candidates")[0].get("content").get("parts")[0].get("text")
+    print(reply)
+msg = input("Enter your question :")
 getcontent(msg)
