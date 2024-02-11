@@ -1,7 +1,7 @@
 import requests
 import socket
 from content import getcontent
-#from google_data import google_Data
+from google_data import google_Data
 def get_ip(host):
     try:
         ip = socket.getaddrinfo(host,None)
@@ -78,6 +78,19 @@ definitions =[
                 {"type": "object",
                 "properties":
                             {"chat": 
+                                {"type": "string",
+                                "description": "full query asked by user."
+                                }
+                            }
+                },
+        },
+         {
+            "name" : "google_Data",
+            "description" : "Browse from the google",
+            "parameters" :
+                {"type": "object",
+                "properties":
+                            {"query": 
                                 {"type": "string",
                                 "description": "full query asked by user."
                                 }

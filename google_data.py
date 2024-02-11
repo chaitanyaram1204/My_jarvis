@@ -1,7 +1,7 @@
 from urllib.parse import urlparse
 import requests
 from bs4 import BeautifulSoup
-
+from googlesearch import search
 
 def check_and_remove_social_media(url):
     parsed_url = urlparse(url)
@@ -19,11 +19,7 @@ def check_and_remove_social_media(url):
         return True
 
 def search_links(query):
-    try:
-        from googlesearch import search
-    except ImportError:
-        print("No module named 'google' found")
-
+   
     # to search
 
     #print (help(search))
