@@ -1,0 +1,7 @@
+requests
+SpeechRecognition
+gTTS
+pydub
+Flask
+beautifulsoup4
+googlesearch-python
