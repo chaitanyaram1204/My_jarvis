@@ -15,3 +15,5 @@ def mic_to_text_class():
     except:
         pass
     return recognizer.recognize_google(audio)
+if __name__ == "__main__":
+    mic_to_text_class()
