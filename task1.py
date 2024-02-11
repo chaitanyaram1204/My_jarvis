@@ -6,7 +6,7 @@ def temp_city(city):
     querystring = {"location":city,"format":"json","u":"f"}
 
     headers = {
-        "X-RapidAPI-Key": "6df66e6f06msh5f697bd21eaf46bp1db5edjsnf8c8eefe107d",
+        "X-RapidAPI-Key": "zx",
         "X-RapidAPI-Host": "yahoo-weather5.p.rapidapi.com"
     }
 
