@@ -8,7 +8,7 @@ def getcontent(chat):
                 "role" : "user",
                 "parts" : [
                     {
-                        "text" : "You are an AI bot,your name is My jarvis" + " " + chat
+                        "text" : "You are an AI bot,your name is My jarvis find the content related to query:" + " " + chat
                     }
                 ]
             }
@@ -19,7 +19,8 @@ def getcontent(chat):
     reply_api = response.json()
     
     reply = reply_api.get("candidates")[0].get("content").get("parts")[0].get("text")
-    print(reply)
-msg = mic_to_text_class()
-#msg = input("Enter your question :")
-getcontent(msg)
+    return reply
+if __name__ == "__main__": 
+    msg = mic_to_text_class()
+    #msg = input("Enter your question :")
+    getcontent(msg)

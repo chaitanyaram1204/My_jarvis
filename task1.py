@@ -1,9 +1,10 @@
 import requests
 import socket
-
+from content import getcontent
+#from google_data import google_Data
 def get_ip(host):
     try:
-        ip = socket.getaddrinfo("google.com",None)
+        ip = socket.getaddrinfo(host,None)
         return ip
     except:
         return "Error : Host not found"
@@ -11,6 +12,7 @@ def get_ip(host):
 def temp_room(room):
     result = "Temperatiure in " + room + " is 25°C"
     return result
+
 def temp_city(city):
     url = "https://yahoo-weather5.p.rapidapi.com/weather"
 
@@ -55,15 +57,29 @@ definitions =[
                                 }
                             }
                 },
-        },{
+        },
+        {
             "name" : "get_ip",
-            "description" : "Gfind ip address of given url or domain name.",
+            "description" : "find ip address of given url or domain name.",
             "parameters" :
                 {"type": "object",
                 "properties":
                             {"host": 
                                 {"type": "string",
                                 "description": "get url or domain name."
+                                }
+                            }
+                },
+        },
+        {
+            "name" : "getcontent",
+            "description" : "hi hello general message",
+            "parameters" :
+                {"type": "object",
+                "properties":
+                            {"chat": 
+                                {"type": "string",
+                                "description": "full query asked by user."
                                 }
                             }
                 },

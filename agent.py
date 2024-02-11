@@ -2,6 +2,8 @@
 from config import key
 import requests #web
 import task1
+from audio import text_audio
+
 
 def parse_function_response(message):
     function_call = message[0].get("functionCall")
@@ -58,13 +60,16 @@ def run_conversion(user_input):
         print("Error : No content in response")
         #return "No content found"
     message = reply_api.get("candidates")[0].get("content").get("parts")
+    print("Message :#############" ,message)
 
-
-    if 'functionCall' in message[0]:
+    if "functionCall" in message[0]:
         resp1 = parse_function_response(message)
+        text_audio(resp1)
         return resp1
+    else:
+        return "Error : Function not found"
     """   reply = reply_api.get("candidates")[0].get("content").get("parts")[0].get("text") """
     print(reply_api)
 
 if __name__ == "__main__":
-    print(run_conversion("find the ip addres of google.com"))
+    print(run_conversion("what is the temperature of my room"))
