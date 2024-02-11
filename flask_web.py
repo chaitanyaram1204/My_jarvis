@@ -6,6 +6,8 @@ app = Flask(__name__)
 @app.route('/') 
 def hello():
     return render_template("index.html")
+    # All index.html that codes must in the templates folder
+    # All css,js and images must be in the static folder
 
 
 if __name__ == "__main__":  
