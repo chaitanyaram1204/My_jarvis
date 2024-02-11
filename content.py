@@ -1,6 +1,6 @@
 from config import key
 import requests #web 
-
+from mic_to_text import mic_to_text_class
 def getcontent(chat):
     data = {
         "contents" : [
@@ -20,5 +20,6 @@ def getcontent(chat):
     
     reply = reply_api.get("candidates")[0].get("content").get("parts")[0].get("text")
     print(reply)
-msg = input("Enter your question :")
+msg = mic_to_text_class()
+#msg = input("Enter your question :")
 getcontent(msg)
