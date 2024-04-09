@@ -14,13 +14,13 @@ def temp_room(room):
     return result
 
 def temp_city(city):
-    url = "https://yahoo-weather5.p.rapidapi.com/weather"
+    url = "Your_URL"
 
     querystring = {"location":city,"format":"json","u":"f"}
 
     headers = {
-        "X-RapidAPI-Key": "6df66e6f06msh5f697bd21eaf46bp1db5edjsnf8c8eefe107d",
-        "X-RapidAPI-Host": "yahoo-weather5.p.rapidapi.com"
+        "X-RapidAPI-Key": "Your_API_KEY",
+        "X-RapidAPI-Host": "Your_HOST_name"
     }
 
     response = requests.get(url, headers=headers, params=querystring)
